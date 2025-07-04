@@ -1,24 +1,13 @@
 {
   "mcpServers": {
-    "memory": {
-      "command": "npx",
-      "args": ["-y", "@modelcontextprotocol/server-memory"]
-    },
-    "time": {
-      "command": "uvx",
-      "args": ["mcp-server-time", "--local-timezone=America/New_York"]
-    },
-    "mcp_sse": {
-      "type": "sse",
-      "url": "http://127.0.0.1:8001/sse",
-      "headers": {
-        "Authorization": "Bearer token",
-        "X-Custom-Header": "value"
+      "taskade": {
+          "command": "npx",
+          "args": [
+              "-y", "@taskade/mcp-server"
+          ],
+          "env": {
+              "TASKADE_API_KEY": "tskdp_GFJ3PkVfnHrcudupKqZnG8n7h5uWuygRvK"
+          }
       }
-    },
-    "mcp_streamable_http": {
-      "type": "streamable_http",
-      "url": "http://127.0.0.1:8002/mcp"
-    }
   }
 }
