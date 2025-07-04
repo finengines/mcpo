@@ -7,6 +7,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     git \
     curl \
     ca-certificates \
+    gettext-base \
     && rm -rf /var/lib/apt/lists/*
 
 # Install Node.js and npm via NodeSource 
@@ -35,10 +36,16 @@ RUN which mcpo
 # Expose port (optional but common default)
 EXPOSE 8000
 
-# Ensure Dokploy environment variables are available at runtime
+# Create a startup script that handles environment variable substitution
+RUN echo '#!/bin/bash' > /app/start.sh && \
+    echo 'set -e' >> /app/start.sh && \
+    echo '' >> /app/start.sh && \
+    echo '# Substitute environment variables in config.json' >> /app/start.sh && \
+    echo 'envsubst < /app/config.json > /app/config.runtime.json' >> /app/start.sh && \
+    echo '' >> /app/start.sh && \
+    echo '# Start mcpo with the processed config and API key' >> /app/start.sh && \
+    echo 'exec mcpo --config /app/config.runtime.json --api-key "${MCPO_API_KEY}"' >> /app/start.sh && \
+    chmod +x /app/start.sh
 
-
-# Always start mcpo with config file and API key from env
-ENTRYPOINT ["mcpo", "--config", "/app/config.json", "--api-key", "${MCPO_API_KEY}"]
-
-# No default CMD needed; all args are in ENTRYPOINT
+# Use the startup script as entrypoint
+ENTRYPOINT ["/app/start.sh"]
