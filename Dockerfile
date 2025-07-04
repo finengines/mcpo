@@ -35,8 +35,7 @@ RUN which mcpo
 # Expose port (optional but common default)
 EXPOSE 8000
 
-# Entrypoint set for easy container invocation
-ENTRYPOINT ["mcpo"]
+# Always start mcpo with config file and API key from env
+ENTRYPOINT ["mcpo", "--config", "/app/config.json", "--api-key", "${MCPO_API_KEY}"]
 
-# Default help CMD (can override at runtime)
-CMD ["--help"]
+# No default CMD needed; all args are in ENTRYPOINT
