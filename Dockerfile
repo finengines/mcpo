@@ -35,7 +35,10 @@ RUN which mcpo
 # Expose port (optional but common default)
 EXPOSE 8000
 
+# Ensure Dokploy environment variables are available at runtime
+ENV TASKADE_API_KEY=${TASKADE_API_KEY}
+
 # Always start mcpo with config file and API key from env
-ENTRYPOINT ["mcpo", "--config", "/app/config.json", "--api-key", "miL2IHBTPTeUiWBaLgHTUXU/VRiELyfj8zNStqaMeIIUT92sRyt5cEhpCitX+eMTL/06FEsvUqvKOwNAjGoBig=="]
+ENTRYPOINT ["mcpo", "--config", "/app/config.json", "--api-key", "${MCPO_API_KEY}"]
 
 # No default CMD needed; all args are in ENTRYPOINT
