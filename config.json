@@ -6,7 +6,7 @@
               "-y", "@taskade/mcp-server"
           ],
           "env": {
-              "TASKADE_API_KEY": "tskdp_GFJ3PkVfnHrcudupKqZnG8n7h5uWuygRvK"
+              "TASKADE_API_KEY": "tskdp_83co7uTEcXyUvB4pXUKeQ9rX91BvXEGgux"
           }
       }
   }

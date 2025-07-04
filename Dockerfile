@@ -36,6 +36,6 @@ RUN which mcpo
 EXPOSE 8000
 
 # Always start mcpo with config file and API key from env
-ENTRYPOINT ["mcpo", "--config", "/app/config.json", "--api-key", "${MCPO_API_KEY}"]
+ENTRYPOINT ["mcpo", "--config", "/app/config.json", "--api-key", "miL2IHBTPTeUiWBaLgHTUXU/VRiELyfj8zNStqaMeIIUT92sRyt5cEhpCitX+eMTL/06FEsvUqvKOwNAjGoBig=="]
 
 # No default CMD needed; all args are in ENTRYPOINT
