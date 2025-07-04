@@ -36,7 +36,7 @@ RUN which mcpo
 EXPOSE 8000
 
 # Ensure Dokploy environment variables are available at runtime
-ENV TASKADE_API_KEY=${TASKADE_API_KEY}
+
 
 # Always start mcpo with config file and API key from env
 ENTRYPOINT ["mcpo", "--config", "/app/config.json", "--api-key", "${MCPO_API_KEY}"]
