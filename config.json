@@ -1,13 +1,20 @@
 {
   "mcpServers": {
-      "taskade": {
-          "command": "npx",
-          "args": [
-              "-y", "@taskade/mcp-server"
-          ],
-          "env": {
-              "TASKADE_API_KEY": "${TASKADE_API_KEY}"
-          }
+    "taskade": {
+      "command": "npx",
+      "args": [
+        "-y", "@taskade/mcp-server"
+      ],
+      "env": {
+        "TASKADE_API_KEY": "${TASKADE_API_KEY}"
       }
+    },
+    "Bright Data": {
+      "command": "npx",
+      "args": ["@brightdata/mcp"],
+      "env": {
+        "API_TOKEN": "${BRIGHTDATA_API_TOKEN}"
+      }
+    }
   }
 }
