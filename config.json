@@ -9,7 +9,7 @@
         "TASKADE_API_KEY": "${TASKADE_API_KEY}"
       }
     },
-    "Bright Data": {
+    "brightdata": {
       "command": "npx",
       "args": ["@brightdata/mcp"],
       "env": {
