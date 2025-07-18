@@ -14,6 +14,13 @@
       "args": ["@brightdata/mcp"],
       "env": {
         "API_TOKEN": "${BRIGHTDATA_API_TOKEN}"
+      },
+    "mcp_sse": {
+      "type": "sse",
+      "url": "https://n8n.finproductions.uk/mcp/my-calendar/sse",
+      "headers": {
+        "Authorization": "$(CALENDAR_MCP_TOKEN)",
+        "X-Custom-Header": "value"
       }
     }
   }
