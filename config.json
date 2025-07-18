@@ -22,7 +22,11 @@
       "headers": {
         "Authorization": "Bearer ${CALENDAR_MCP_TOKEN}",
         "X-Custom-Header": "value"
-      }
+      },
+    "time": {
+      "command": "uvx",
+      "args": ["mcp-server-time", "--local-timezone=Europe/London"]
+    }
     }
   }
 }
