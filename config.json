@@ -27,6 +27,10 @@
     "time": {
       "command": "uvx",
       "args": ["mcp-server-time", "--local-timezone=Europe/London"]
+    },
+    "graphiti-memory": {
+      "transport": "sse",
+      "url": "https://graphiti.mcp.finproductions.uk/sse"
     }
   }
 }
