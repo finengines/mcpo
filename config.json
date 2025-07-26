@@ -2,9 +2,7 @@
   "mcpServers": {
     "taskade": {
       "command": "npx",
-      "args": [
-        "-y", "@taskade/mcp-server"
-      ],
+      "args": ["-y", "@taskade/mcp-server"],
       "env": {
         "TASKADE_API_KEY": "${TASKADE_API_KEY}"
       }
@@ -25,11 +23,12 @@
       "url": "https://graphiti.mcp.finproductions.uk/sse"
     },
     "calendar": {
-      "type": "sse",
+      "transport": "sse",
       "url": "https://n8n.finproductions.uk/mcp/my-calendar/sse",
       "headers": {
-        "Authorization": "$(CALENDAR_MCP_TOKEN)",
+        "Authorization": "${CALENDAR_MCP_TOKEN}",
         "X-Custom-Header": "value"
+      }
     }
   }
 }
