@@ -23,6 +23,13 @@
     "graphiti-memory": {
       "transport": "sse",
       "url": "https://graphiti.mcp.finproductions.uk/sse"
+    },
+    "calendar": {
+      "type": "sse",
+      "url": "https://n8n.finproductions.uk/mcp/my-calendar/sse",
+      "headers": {
+        "Authorization": "$(CALENDAR_MCP_TOKEN)",
+        "X-Custom-Header": "value"
     }
   }
 }
