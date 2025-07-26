@@ -22,13 +22,5 @@
       "type": "sse",
       "url": "https://graphiti.mcp.finproductions.uk/sse"
     },
-    "calendar": {
-      "transport": "sse",
-      "url": "https://n8n.finproductions.uk/mcp/my-calendar/sse",
-      "headers": {
-        "Authorization": "${CALENDAR_MCP_TOKEN}",
-        "X-Custom-Header": "value"
-      }
-    }
   }
 }
