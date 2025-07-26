@@ -21,6 +21,6 @@
     "graphiti-memory": {
       "type": "sse",
       "url": "https://graphiti.mcp.finproductions.uk/sse"
-    },
+    }
   }
 }
